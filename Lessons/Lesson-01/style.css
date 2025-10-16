@@ -1,0 +1,46 @@
+img {
+    width: 500px;
+    height: 400px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#first-list-item li{
+    background-color: pink;
+    font-size: 1.5em;
+}
+
+#second-list-item li{
+    background-color: lightblue;
+    font-size: 1.2em;
+}
+
+.on-sale {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid grey;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#best-one {
+    border: 3px solid lightgoldenrodyellow;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+a:hover li {
+    border: #333;    
+    cursor: pointer;
+}

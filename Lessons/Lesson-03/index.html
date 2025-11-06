@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS&JS Files -->
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>
+    <!-- defer is for js to not block html loading -->
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <header>
+
+        <h1>To-Do List</h1>
+
+<!-- input and add button -->
+        <div id="add-container">
+            <input type="text" id="task-input" placeholder="add a new task...">
+            <button id="add-btn">+</button>
+        </div>
+<!-- view list mode toggle -->
+        <div id="view-toggle-container">
+            <button id="list-view-btn" class="toggle-btn">List View</button>
+            <button id="card-view-btn"  class="toggle-btn">Card View</button>
+        </div>
+    </header>
+    
+
+<main>
+
+<!-- to do list -->
+    <ul id="task-list-container" class="card-view">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ul>
+
+</main>
+</body>
+
+</html>

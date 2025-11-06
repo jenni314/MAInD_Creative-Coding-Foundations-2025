@@ -5,41 +5,121 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Plate</title>
+
+<!-- LINK FILES -->
+
+    <!-- js & css     -->
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="sentient/sentient.css">
     <script src="assets/script.js" defer></script>
+
+    <!-- Typography Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <form id="input-form">
-        <h1>Plate</h1>
-        <input type="text" id="search" placeholder="What is in your Fridge?">
-        <button type="submit" id="btn-add">Add New!</button>
-        </form>
-    </header>
+
+<!-- HEADER -->
+
+<header>
+
+    <!-- Logo -->
+    <div id="logo-area">
+        <img src="assets/Logo.svg" id="logo">
+        <h1>What is in your Plate?</h1>
+
+    </div>
+</header>
+
 <main>
-    <nav>
-        <button id="card">Card View</button>
-        <button id="list">List View</button>
-    </nav>
-    <ul class="card">
+    
+    <!-- RECIPE CARDS AND CONTENT AREA -->
+    
+    <div class="recipe-cards-content">
+
+    <!-- Tagline and Btn-->
+    <div id="tagline-and-btn">
+        <p>Hello, this is ✿ Jenni ✿, I made this site. This is a place to record for your mind and body wellbeing - and when you run out of ideas for food.</p>
+        
+    <!-- List and Card Btn -->
+        <div id="function-btn-group" >
+            <button id="list-btn" class="secondary-button">View as List
+            </button>
+        <button id="card-btn" class="secondary-button">View as Card</button>
+        </div>
+
+    </div>
+
+    <!-- List and Card Section -->
+
+    <ul class="card" id="recipe-list-container">
+
+    <!-- Card Layout -->
        <li>
-          <p>1</p>
-            <button class="delete">Delete</button>    
+        <div id="recipe-content">
+
+        <div id="title-area">
+        <p id="recipe-title">
+            Pumpkin Soup
+        </p>
+        <button class="tertiary-button" id="delete-card">Delete</button>
+        </div>
+        <p id="recipe-description-content">Grated some fresh seasonal pumpkin and cooked them together with some butter, cream and broccoli.  </p>
+        </div>
+
+        <div class="tags-card-view" id="ingredient-list-container">
+          <button class="tag">Pumpkin</button>
+          <button class="tag">Onion</button>
+          <button class="tag">Cream</button>
+          <button class="tag">Butter</button>
+          <button class="tag">Cheese</button>
+          <button class="tag">Herbs</button>
+        </div>
        </li>
-       <li>
-          <p>2</p>
-            <button class="delete">Delete</button>    
+          </div>
        </li>
-       <li>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button class="delete">Delete</button>    
-       </li>
-       <li>
-          <p>4</p>
-            <button class="delete">Delete</button>    
-       </li>
+
     </ul>
+</div>
+
+
+<!-- RECIPE INPUTS-->
+
+<div class="input-modal">
+
+<div id="recipe-input" class="modal-layout">
+
+    <input type="text" id="recipe-name" class="recipe-input-style" placeholder="Recipe Name">
+    </input>
+
+    <textarea type="text" id="recipe-description" class="recipe-textarea-style" placeholder="How you made it"></textarea>
+
+    <input type="text" id="ingredient-tag" class="recipe-tags-style" placeholder="Ingredient" >
+
+    <div class="color-and-save-btn">
+
+    <div id="card-color">
+        <button id="beige"> </button>
+        <button id="grey"> </button>
+        <button id="orange"> </button>
+        <button id="pink"> </button>
+        <button id="yellow"> </button>
+        <button id="green"> </button>
+        <button id="purple"> </button>
+        <button id="blue"> </button>
+    </div>
+
+     <button class="primary-button" id="save-button">
+        Save it!
+    </button>
+
+    </div>
+
+</div>
+</div>
+
 </main>
 </body>
 

@@ -11,10 +11,9 @@ Starting from the concept of a pinboard, implement a web page that:
 
 ## Submission
 
-<img src="/Users/leejennifer/Documents/SUPSI 2526/6_Creative Coding Foundations/REPOS/MAInD_Creative-Coding-Foundations-2025/Assignment/Assigment-01/assets/cardview.png">
+![this is a card view](cardview.png)
+![this is a list view](listview.png)
 
-
-<img src= "/Users/leejennifer/Documents/SUPSI 2526/6_Creative Coding Foundations/REPOS/MAInD_Creative-Coding-Foundations-2025/Assignment/Assigment-01/assets/listview.png">
 
 ### Description
 

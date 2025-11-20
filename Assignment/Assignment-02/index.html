@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DECLUTTER IT!</title>
+
+    <!-- js & css     -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="satoshi-font/satoshi.css">
+    <script src="assets/script.js" defer></script>
+        <script src="assets/item-list.js" defer></script>
+
+   
+</head>
+<body>
+
+    <div id="modal-overlay">
+         
+    </div>
+
+ <header>
+    <div class="game_title">
+        <div class="title_text">
+        <div class="title_subtitle">
+        <h1>DECLUTTER IT!</h1>
+        <h2>Don’t Let the Junk Pile Up</h2>
+        </div>
+        <!-- <h3 id="time"> 1:00 </h3> -->
+        </div>
+
+        <div class="budget-list">
+
+            <ul id="item-list">
+                
+            </ul>
+            
+        <div class="budget-text">
+            <h3>Budget:</h3>
+            <p id="budget-amount">$1000</p>
+    
+        </div>
+        
+
+    </div>
+    </div>
+ </header>
+
+ <main id="game_area">
+
+
+
+    <div id="gamestart-modal" class="modal">
+
+        <div id="start-content-1">
+            <div>
+                <h2>WELCOME</h2>
+                <p>You have impulsive shopping issues. Stop yourself from buying useless trinkets.</p>
+                <p>Gameover when you run out of money</p>
+
+            </div>
+            <button id ="next-button">Next</button>
+        </div>
+
+        <div id="start-content-2">
+            <h2>Choose Your Avatar</h2>
+            <div id="avatar-option">
+                <button id="avatar-1" class="avatar_btn">
+                    <img src="img/avatar-option/avatar-1.png">
+                    <!-- <p>Pink Elf</p> -->
+                </button>
+                <button id="avatar-2" class="avatar_btn">
+                    <img src="img/avatar-option/avatar-2.png">
+                    <!-- <p>Tanuki Girl</p> -->
+                </button>
+
+                <button id="avatar-3" class="avatar_btn">
+                <img src="img/avatar-option/avatar-3.png">
+                <!-- <p>Fighter Boy</p> -->
+                </button>
+            </div>
+            <button id ="start-button">Start</button>
+        </div>
+
+        <div id="end-content">
+            <div>
+                <h2>Game Over</h2>
+                <p>Your Budget is now 0. You are poor now!</p>
+                <div id="img-container">
+                <img src="img/money-fly.png">
+                </div>
+            </div>
+            <button id ="restart-button">Restart</button>
+        </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div></div>
+    <div class="avatar-container">
+        <div id="avatar">
+            <img id="avatar-img" src="img/avatar-option/avatar-1.png" alt="avatar">
+        </div>
+    </div>
+ </main>
+
+ <footer>
+    
+    <p> Press Space Bar to Shoot!</p>
+ 
+ </footer>
+    
+</body>
+</html>

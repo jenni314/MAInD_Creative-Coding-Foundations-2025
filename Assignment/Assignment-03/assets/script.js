@@ -1,3 +1,11 @@
+// API
+
+fetch('https://acnhapi.com/v1a/furniture')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); 
+  })
+  .catch(error => console.error('Fetch error:', error));
 
 
 // START MODAL

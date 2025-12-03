@@ -35,7 +35,6 @@ ctx.fill();
 ctx.restore();
 
 requestAnimationFrame (draw);
-
 }
 
 draw();

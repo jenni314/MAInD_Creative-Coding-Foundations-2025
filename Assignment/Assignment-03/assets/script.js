@@ -1,11 +1,24 @@
 // API
 
-fetch('https://acnhapi.com/v1a/furniture')
-  .then(response => response.json())
+fetch("https://api.nookipedia.com/nh/clothing", {
+  headers: {
+    "Accept-Version": "1.0.0",
+    "X-API-KEY": "3f379744-6422-4884-9ea0-2460a2880e76"
+  }
+})
+  .then(res => res.json())
   .then(data => {
-    console.log(data); 
+    clothingList = data;
+    console.log("Loaded item:", clothingList.length);
+    console.log("Example item:", clothingList[0]);
+    console.log("Example variation:", clothingList[0].variations[0]);
+
   })
-  .catch(error => console.error('Fetch error:', error));
+  .catch(err => console.error(err));
+
+
+
+
 
 
 // START MODAL
@@ -33,7 +46,7 @@ startBtn.addEventListener("click", () => {
 
 // BACKGROUND MUSIC
 
-game_music = "https://cdn.pixabay.com/audio/2024/08/28/audio_f7b02c8be7.mp3"
+game_music = "https://cdn.pixabay.com/audio/2025/10/10/audio_810130259e.mp3"
 const gameMusic = new Audio (game_music)
 
 function playMusic() {
@@ -158,35 +171,74 @@ document.addEventListener ("keydown", (e) => {
 
 // FALLING OBJECTS
 
-const fallingObject = [];
+// const fallingObject = [];
 
-for (let i = 1; i <= 34; i++) {
-  fallingObject.push(`img/object/object${i}.png`);
-}
-console.log(fallingObject);
+// for (let i = 1; i <= 34; i++) {
+//   fallingObject.push(`img/object/object${i}.png`);
+// }
+// console.log(fallingObject);
+
+// function createObject () {
+
+    // let newObject = document.createElement("img");
+    // let randomSprite = fallingObject[Math.floor(Math.random() * fallingObject.length)];
+
+    // newObject.src = randomSprite;
+    // newObject.className = "falling-object";
+
+    // newObject.style.position = "absolute";
+    // newObject.style.left = Math.random() * 90 + "%";
+
+    // newObject.style.width = Math.random() * 5 + 12 + 0.5*"%" ;
+
+    // newObject.isDestroyed = false;
+
+    // gameArea.appendChild(newObject);
+
+    // moveObject(newObject);
+     
+// }   
+
+let clothingList = [];
 
 function createObject () {
-    let newObject = document.createElement("img");
-    let randomSprite = fallingObject[Math.floor(Math.random() * fallingObject.length)];
 
-    newObject.src = randomSprite;
+    if (clothingList.length === 0) return; 
+
+    const item = clothingList[Math.floor(Math.random() * clothingList.length)];
+
+    let newObject = document.createElement("img");
+    newObject.dataset.name = item.name;
+
+
+    const variation = item.variations[Math.floor(Math.random() * item.variations.length)];
+
+    const imgUrl = variation.image_url;
+
+    newObject.src = imgUrl;
+    newObject.alt = item.name;
     newObject.className = "falling-object";
 
+    newObject.dataset.name = item.name;
+
+
     newObject.style.position = "absolute";
+    newObject.style.top = "-10%";
     newObject.style.left = Math.random() * 90 + "%";
 
-    newObject.style.width = Math.random() * 5 + 12 + 0.5*"%" ;
+    newObject.style.width = Math.random() * 5 + 12 + "%/2";
 
     newObject.isDestroyed = false;
 
     gameArea.appendChild(newObject);
 
     moveObject(newObject);
-}   
+}
+
 
 function moveObject (newObject) {
-    let yPosition = -10;
-    newObject.style.top = yPosition + "%";
+    let yPosition = -40;
+    newObject.style.top = yPosition;
 
     let objectInterval = setInterval(() => {
 
@@ -195,14 +247,18 @@ function moveObject (newObject) {
             return;
         }
 
+
         if (yPosition >= 90) {
             yPosition = 90; 
             newObject.style.top = yPosition + "%";
+
+            addItem(newObject.dataset.name);
 
             loseBudget(); 
 
             clearInterval(objectInterval);
         return;
+        
 
         } else {
             yPosition += 1;
@@ -278,11 +334,19 @@ function getItem() {
 }
 
 
-function addItem () {
+// function addItem () {
+//     const li = document.createElement("li");
+//     li.textContent = getItem();
+//     listContainer.appendChild(li);
+
+// }
+
+function addItem(itemName) {
     const li = document.createElement("li");
-    li.textContent = getItem();
+    li.textContent = itemName;
     listContainer.appendChild(li);
 }
+
 
 cashier_sound = "https://cdn.pixabay.com/audio/2025/07/18/audio_f1c1d0ad73.mp3"
 

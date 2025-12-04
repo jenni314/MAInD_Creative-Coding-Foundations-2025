@@ -58,6 +58,18 @@ function pauseMusic() {
     gameMusic.pause();
 }
 
+
+function startSpawningObjects() {
+    objectSpawnInterval = setInterval(() => {
+        if (!gameOver) {
+            createObject();
+        }
+    }, 3000);
+
+    playMusic();
+
+}
+
 // AVATAR
 
 // CHOOSE AVATAR
@@ -264,22 +276,13 @@ function moveObject (newObject) {
             yPosition += 1;
             newObject.style.top = yPosition + "%";
         }
-    }, 20);
+    }, 30);
 }
 
 let objectSpawnInterval;
 
 
-function startSpawningObjects() {
-    objectSpawnInterval = setInterval(() => {
-        if (!gameOver) {
-            createObject();
-        }
-    }, 3000);
 
-    playMusic();
-
-}
 
 // COLLISION DETECTION
 
@@ -328,10 +331,10 @@ const listContainer = document.getElementById("item-list");
 let budgetAmount = 1000;
 let gameOver = false; 
 
-function getItem() {
-    const i = Math.floor(Math.random() * itemList.length);
-    return itemList[i];
-}
+// function getItem() {
+//     const i = Math.floor(Math.random() * itemList.length);
+//     return itemList[i];
+// }
 
 
 // function addItem () {

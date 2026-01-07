@@ -136,3 +136,5 @@ recipeListContainer.addEventListener('click', (e) => {
   if (!btn) return;
   btn.closest('li')?.remove();
 });
+
+// Example
